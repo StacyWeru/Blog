@@ -1,15 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+{% extends 'bootstrap/base.html' %}
 
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/index.css')}}">
-    {% block head %}{% endblock %}
-</head>
-<body>
-    {% block content %}{% endblock %}
+<!-- BLOG TITLE -->
+{% block title%} 
     
-</body>
-</html>
+    Stacy's Blogsite
+
+{% endblock %}
+
+<!-- BLOG HEAD -->
+{% block head %}
+    {{super()}}
+{% endblock %}
+
+<!-- CUSTOM STYLESHEET -->
+{% block styles %}
+    {{super()}}
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+
+<!-- NAVBAR -->
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
