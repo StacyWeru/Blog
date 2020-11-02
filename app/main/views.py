@@ -1,8 +1,9 @@
-from flask import render_template,url_for
-from app import app
+from flask import render_template,url_for,request,redirect
+from . import main
+
 
 #views
-@app.route('/')
+@main.route('/')
 def index():
     '''
     View root page returns the index page
